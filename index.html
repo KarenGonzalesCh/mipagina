@@ -1,305 +1,357 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adam Portfolio-Procoder09</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Karen Gonzales - Analista de Datos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- 1. VARIABLES Y ESTILOS GENERALES --- */
+        :root {
+            --primary-color: #2c3e50;      /* Azul oscuro principal */
+            --secondary-color: #34495e;    /* Azul grisáceo */
+            --accent-color: #3498db;       /* Azul brillante para detalles */
+            --bg-light: #ffffff;           /* Fondo blanco */
+            --bg-alt: #dae6ec;             /* Fondo gris azulado (como la referencia) */
+            --text-color: #555555;
+            --text-light: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300; /* Estilo fino como la referencia */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- 2. NAVEGACIÓN --- */
+        nav {
+            background-color: var(--bg-light);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo { font-size: 1.2rem; font-weight: 600; color: var(--primary-color); }
+
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { 
+            color: var(--secondary-color); 
+            font-size: 0.9rem; 
+            font-weight: 600;
+        }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        /* Botón hamburguesa móvil */
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+        /* --- 3. HERO (PORTADA) --- */
+        .hero {
+            /* Imagen de fondo genérica de tecnología/datos - Puedes cambiar la URL */
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; font-weight: 600; }
+        .hero h2 { font-size: 1.5rem; font-weight: 300; margin-bottom: 30px; }
+        .btn {
+            padding: 12px 30px;
+            border: 2px solid var(--text-light);
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        .btn:hover { background: var(--text-light); color: var(--primary-color); }
+
+        /* --- 4. FRASE (Quote Bar) --- */
+        .quote-section {
+            background-color: var(--bg-alt);
+            padding: 40px 20px;
+            text-align: center;
+            font-style: italic;
+            border-left: 5px solid var(--primary-color); /* Detalle de diseño */
+        }
+        .quote-section blockquote { font-size: 1.2rem; max-width: 800px; margin: 0 auto; }
+
+        /* --- 5. SECCIONES COMUNES --- */
+        section { padding: 60px 10%; }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        /* --- 6. SERVICIOS --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        .service-card h3 { font-size: 1.1rem; margin-bottom: 15px; color: var(--primary-color); font-weight: 600;}
+
+        /* --- 7. SOBRE MÍ (Color de fondo alterno) --- */
+        #about { background-color: var(--bg-alt); }
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .about-text { flex: 2; }
+        .about-image { 
+            flex: 1; 
+            text-align: center; 
+        }
+        .about-image img {
+            max-width: 100%;
+            border-radius: 50%; /* Foto redonda */
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- 8. PORTFOLIO & DASHBOARD --- */
+        .project-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .project-description { margin-bottom: 20px; }
+        .project-description h3 { color: var(--primary-color); font-weight: 600; margin-bottom: 10px;}
+
+        /* Responsive Iframe Wrapper */
+        .iframe-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding-top: 75%; /* Aspect Ratio 4:3 (ajustar si es necesario) */
+            border: 1px solid #ddd;
+        }
+        .iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- 9. CONTACTO Y FOOTER --- */
+        #contact { background-color: var(--primary-color); color: white; text-align: center; padding: 50px 20px; }
+        #contact h2 { color: white; }
+        .social-icons { margin-top: 30px; }
+        .social-icons a {
+            font-size: 2rem;
+            color: white;
+            margin: 0 15px;
+        }
+        .social-icons a:hover { color: var(--accent-color); }
+        
+        footer {
+            background-color: #1a252f;
+            color: #7f8c8d;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Se oculta en móvil */
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: white;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { display: flex; } /* Clase para mostrar menú con JS */
+            .menu-toggle { display: block; color: var(--primary-color); }
+            
+            .hero h1 { font-size: 2rem; }
+            .about-content { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
 
-
-    <header>
-        <a href="" class="brand" data-aos="zoom-in" data-aos-duration="1000">Adam</a>
-        <div class="menu-btn"></div>
-        <div class="navigation">
-            <a href="#main" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Home</a>
-            <a href="#about"data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">About</a>
-            <a href="#skills" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Skills</a>
-            <a href="#services" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Services</a>
-            <a href="#work" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">Work</a>
-            <a href="#" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">Contact</a>
+    <nav>
+        <div class="logo">KAREN GONZALES</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
         </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#about">Sobre Mí</a></li>
+            <li><a href="#portfolio">Portafolio</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Karen Gonzales</h1>
+        <h2>Analista de Datos</h2>
+        <a href="#portfolio" class="btn">Ver Proyectos</a>
     </header>
 
-    <section class="main" id="main">
-        <div class="content">
-            <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800">Hello, I'm <br><span>Adam Smith</span></h2>
-            <div class="animated-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="900">
-                <h3>Web Developer</h3>
-                <h3>Web Designer</h3>
-                <h3>Programmer</h3>
+    <section class="quote-section">
+        <blockquote>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        </blockquote>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-chart-line service-icon"></i> <h3>Dashboards Interactivos</h3>
+                <p>Creación de tableros de control dinámicos para la toma de decisiones basada en datos.</p>
             </div>
-            <a href="#" class="btn" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="1000">See My Work</a>
-            <div class="media-icons">
-                <a href="#" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1200"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1300"><i class="fab fa-instagram"></i></a>
-                <a href="#" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1400"><i class="fab fa-twitter"></i></a>
-                <a href="#" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1500"><i class="fab fa-github"></i></a>
+            <div class="service-card">
+                <i class="fas fa-database service-icon"></i> <h3>Análisis de Datos</h3>
+                <p>Procesamiento y limpieza de datos para transformar información cruda en insights.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-cogs service-icon"></i> <h3>Optimización</h3>
+                <p>Identificación de puntos de mejora en procesos industriales mediante análisis de datos.</p>
             </div>
         </div>
     </section>
 
-<!--  About Section -->
-
-    <section class="about" id="about">
-        <div class="title reveal">
-            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">About me</h2>
-        </div>
-        <div class="content">
-            <div class="column col-left reveal">
-                <div class="img-card" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200">
-                    <img src="Image/img1.jpg" alt="">
-                </div>
+    <section id="about">
+        <h2 class="section-title">Sobre Mí</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    ¡Hola! Soy Karen. Soy estudiante avanzada de <strong>Ingeniería Industrial</strong> y de la <strong>Licenciatura en Ciencia de Datos</strong> en la Universidad Nacional de San Martín (UNSAM).
+                </p>
+                <br>
+                <p>
+                    Me apasiona encontrar patrones donde otros solo ven números. Mi formación dual me permite entender tanto los procesos técnicos industriales como la lógica analítica necesaria para optimizarlos. Busco transformar datos complejos en soluciones estratégicas claras.
+                </p>
             </div>
-            <div class="column col-right reveal">
-                <h2 class="content-title" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">Hey There! I am Adam Smith</h2>
-                <p class="paragraph-text" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="400">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <a href="#" class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="600">See more</a>
+            <div class="about-image">
+                <img src="imagenes/foto_fondo_durazno.png" alt="Karen Gonzales">
             </div>
         </div>
     </section>
 
-<!-- Skill Section -->
-
-    <section class="skills" id="skills">
-        <div class="title">
-            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">My Skills</h2>
+    <section id="portfolio">
+        <h2 class="section-title">Portafolio Destacado</h2>
+        
+        <div class="project-container">
+            <div class="project-description">
+                <h3>Análisis de Ventas e Inventario</h3>
+                <p>
+                    Este dashboard interactivo permite visualizar KPIs clave de rendimiento. 
+                    Utilicé Looker Studio para integrar diversas fuentes de datos, permitiendo filtrar por fechas y categorías para un análisis granular.
+                </p>
+            </div>
+            
+            <div class="iframe-wrapper">
+                <iframe 
+                    src="https://lookerstudio.google.com/embed/reporting/3637127c-2fc7-4cf1-9bf2-4180592acebb/page/p_s6kq0q4jwd" 
+                    frameborder="0" 
+                    style="border:0" 
+                    allowfullscreen 
+                    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+                </iframe>
+            </div>
         </div>
-        <div class="content">
-            <div class="column col-left">
-                <h2 class="content-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">My Skills and Experiences</h2>
-                <div class="paragraph-text" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="300">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                <a href="#" class="btn" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="400">See more</a>
-            </div>
-            <div class="column col-right">
-                <div class="bar">
-                    <div class="info" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="100">
-                        <span>HTML</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="line html" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="140"></div>
-                </div>
-                <div class="bar">
-                    <div class="info" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="200">
-                        <span>CSS</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="line css" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="240"></div>
-                </div>
-                <div class="bar">
-                    <div class="info" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="300">
-                        <span>Javascript</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="line javascript" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="340"></div>
-                </div>
-                <div class="bar">
-                    <div class="info" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="400">
-                        <span>Python</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="line python" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="440"></div>
-                </div>
-                <div class="bar">
-                    <div class="info" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="500">
-                        <span>PHP</span>
-                        <span>65%</span>
-                    </div>
-                    <div class="line php" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="540"></div>
-                </div>
-            </div>
+
+        <div style="text-align: center; margin-top: 40px; color: #777;">
+            <p><em>Próximamente más proyectos...</em></p>
+        </div>
+
+    </section>
+
+    <section id="contact">
+        <h2>Contacto</h2>
+        <p>¿Tienes un proyecto en mente o quieres conversar sobre datos?</p>
+        
+        <div class="social-icons">
+            <a href="www.linkedin.com/in/karengonzalesch" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:tu-email@ejemplo.com"><i class="fas fa-envelope"></i></a>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <footer>
+        <p>&copy; 2025 Karen Gonzales. Creado con GitHub Pages.</p>
+    </footer>
 
-    <section class="services" id="services">
-        <div class="title">
-            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">My Services</h2>
-            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="content">
-            <div class="card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
-                <div class="service-icon">
-                    <i class="fas fa-palette"></i>
-                </div>
-                <div class="info">
-                    <h3>Web Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                </div>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                <div class="service-icon">
-                    <i class="fas fa-object-group"></i>
-                </div>
-                <div class="info">
-                    <h3>Motion Graphic Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                </div>
-            </div>
-            <div class="card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
-                <div class="service-icon">
-                    <i class="fas fa-file-code"></i>
-                </div>
-                <div class="info">
-                    <h3>Web Development</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Work Section -->
-    <section class="work" id="work">
-        <div class="title">
-            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">My Work</h2>
-        </div>
-        <div class="content">
-            <div class="card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-                <div class="card-img">
-                    <img src="Image/work1.jpg" alt="">
-                </div>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                <div class="card-img">
-                    <img src="Image/work2.jpg" alt="">
-                </div>
-            </div>
-            <div class="card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                <div class="card-img">
-                    <img src="Image/work3.jpg" alt="">
-                </div>
-            </div>
-            <div class="card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
-                <div class="card-img">
-                    <img src="Image/work4.jpg" alt="">
-                </div>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                <div class="card-img">
-                    <img src="Image/work5.jpg" alt="">
-                </div>
-            </div>
-            <div class="card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
-                <div class="card-img">
-                    <img src="Image/work6.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="contact" id="contact">
-        <div class="title reveal">
-          <h2 class="section-title">Contact Me</h2>
-        </div>
-        <div class="content">
-          <div class="row">
-            <div class="card reveal">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="info">
-                <h3>Address</h3>
-                <span>Bercelona, Spain</span>
-              </div>
-            </div>
-            <div class="card reveal">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div class="info">
-                <h3>Phone</h3>
-                <span>+34566-839754</span>
-              </div>
-            </div>
-            <div class="card reveal">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="info">
-                <h3>Email Address</h3>
-                <span>contact@email.com</span>
-              </div>
-            </div>
-            <div class="card reveal">
-              <div class="contact-icon">
-                <i class="fas fa-globe"></i>
-              </div>
-              <div class="info">
-                <h3>Website</h3>
-                <span>mywebsite.com</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="contact-form reveal">
-              <h3>Send Message</h3>
-              <div class="input-box">
-                <input type="text" name="" value="" placeholder="Name">
-              </div>
-              <div class="input-box">
-                <input type="text" name="" value="" placeholder="Email">
-              </div>
-              <div class="input-box">
-                <textarea name="name" rows="8" cols="80" placeholder="Message"></textarea>
-              </div>
-              <div class="input-box">
-                <input type="submit" class="send-btn" name="" value="Send">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-  
-      <footer class="footer">
-        <span class="footer-title">Jacob Stevens</span>
-        <p>Copyright @2021 <a href="#">Coding Zakir</a>. All Rights Reserved.</p>
-      </footer>
-
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init({offset:0});
+        // Script para el menú hamburguesa en celulares
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Script para cerrar el menú al hacer clic en un enlace (mejor experiencia en móvil)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
     </script>
-    <script>
 
-        window.addEventListener("scroll", function(){
-    scrollBtn.classList.toggle("active", window.scrollY > 500);
-});
-
-//javascript for scroll back to top on click scroll-to-top button
-
-// document.querySelector(".scrollToTop-btn").addEventListener("click", () => {
-//   document.body.scrollTop = 0;
-//   document.documentElement.scrollTop = 0;
-// });
-
-        const menuBtn = document.querySelector(".menu-btn");
-        const navigation = document.querySelector(".navigation");
-        const navigationItems = document.querySelector(".navigation a");
-
-        menuBtn.addEventListener("click", () => {
-            menuBtn.classList.toggle("active");
-            navigation.classList.toggle("active");
-        })
-
-        // Navigation Effects
-        window.addEventListener("scroll", function(){
-            const header = document.querySelector("header");
-            header.classList.toggle("sticky", window.scrollY > 0);
-        })
-
-        navigationItems.forEach((navigationItem) => {
-            navigationItem.addEventListener("click", () => {
-                menuBtn.classList.remove("active");
-                navigation.classList.remove("active")
-            })
-        })
-
-
-
-    </script>
 </body>
 </html>
