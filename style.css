@@ -363,3 +363,10 @@ footer {
     font-weight: 600;
     text-transform: uppercase; /* Opcional: para que se vea como en Servicios */
 }
+/* Estilo para imágenes de logos (Reemplazo de iconos) */
+.tool-img {
+    height: 3rem; /* Misma altura que el font-size de los iconos (48px aprox) */
+    width: auto;  /* Mantiene la proporción */
+    margin-bottom: 1rem;
+    display: block; /* Asegura que se comporte bien en el centro */
+}

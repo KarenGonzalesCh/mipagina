@@ -81,6 +81,23 @@
             <i class="fas fa-chart-bar tool-icon"></i>
             <h3>Power BI</h3>
         </div>
+
+        <div class="tool-card">
+            <i class="fas fa-project-diagram tool-icon"></i>
+            <h3>n8n</h3>
+        </div>
+
+        <div class="tool-card">
+            <img src="imagenes/appsheet-logo.png" alt="AppSheet Logo" class="tool-img">
+            <h3>AppSheet</h3>
+        </div>
+
+        <div class="tool-card">
+            <img src="imagenes/power-automate-logo.png" alt="Power Automate Logo" class="tool-img">
+            <h3>Power Automate</h3>
+        </div>
+
+
     </div>
     </section>
 
@@ -231,39 +248,83 @@
                 <br>
                 <p><strong>Contexto:</strong></p>
                <div class="lista-solucion">
-
+                <br>
+                <p>En planta se registraban datos de producción directamente desde sensores instalados en las máquinas inyectoras. 
+                Estos sensores enviaban archivos CSV con información operativa, como tiempos de ciclo, tiempos de parada y cantidad de piezas, 
+                que permitía calcular indicadores de rendimiento y disponibilidad.</p>
+                <br>
+                <p>Sin embargo, el sistema presentaba tres limitaciones críticas:</p>
+                <br>
                 <ul>
-                    <li>La empresa necesitaba visibilidad granular sobre la brecha entre los objetivos de producción y la realidad operativa.</li>
-                    <li>Faltaba control sobre la rotación del inventario, 
-                        lo que generaba acumulación de stock inmovilizado y desconexión entre los costos de fabricación y el precio de venta.</li>
+                    <li>No registraba piezas no conformes, 
+                        lo que impedía obtener el indicador de calidad y calcular el OEE completo.</li>
+                    <li>Los sensores podían generar golpes fantasmas, inflando la cantidad real de piezas producidas.</li>
+                    <li>La información permanecía aislada en la red local de planta, sin acceso para otras áreas.</li>
+
+                </ul>
+            
+                <br>
+                <p><strong>Solución en Dos Etapas:</strong></p>     
+                <ul>
+                    <li>Una etapa para resolver las limitaciones operativas inmediatas.</li>
+                    <li>Una etapa para robustecer la arquitectura desde un enfoque de ingeniería de datos.</li>
                 </ul>
             </div>
-                <br>
-                <p><strong>Solución:</strong></p>      
-
                <div class="lista-solucion">
-                <h5>Módulo 1: Eficiencia de Producción</h5>
+                <h5><strong>ETAPA 1 : </strong> Incorporación de AppSheet para completar la información operativa</h5>
+                <br>
+                <p>Acciones realizadas:</p>
                 <ul>
-                  <li>Comparativa visual de Conjuntos Objetivo vs. Producidos.</li>
-                  <li>Seguimiento de productividad por persona.</li>
-                  <li>KPI clave: Detección de una brecha de producción de 19.490 unidades respecto al objetivo anual.</li>
+                    <li>Desarrollo de un formulario en AppSheet para el registro manual de piezas no conformes.</li>
+                    <li>Integración del formulario con Google Sheets para unificar información del sensor con la carga operativa.</li>
+                    <li>Implementación de reglas de consistencia para corregir lecturas erróneas mediante el contraste producción esperada vs. real.</li>
                 </ul>
-                  <h5>Módulo 2: Gestión de Depósito (Picking)</h5>
+                <br>
+                <p>Impacto:</p>
                 <ul>
-                  <li>Análisis de eficiencia de preparación de pedidos.</li>
-                  <li>KPI clave: Visualización de la eficiencia del picking (9.808 realizados vs 30.000 objetivo), 
-                    permitiendo identificar falta de capacidad operativa.</li>
+                    <li>Incorporación del indicador de calidad de manera confiable.</li>
+                    <li>Eliminación del sesgo por golpes fantasmas.</li>
+                    <li>Obtención de un OEE completo (Disponibilidad, Rendimiento y Calidad).</li>
+                    <li>Participación de los operarios en la mejora de la calidad del dato.</li>
                 </ul>
-                <h5>Módulo 3: Salud del Inventario</h5>
+                <br>
+                <h5><strong>ETAPA 2 : </strong> Migración y fortalecimiento de la arquitectura con enfoque de Ingeniería de Datos</h5>
+                <p>Una vez completada la captura integral de la información, 
+                    se avanzó hacia una arquitectura más escalable, 
+                    gobernada y apta para análisis corporativo.</p>
+                <br>
+                <p>Acciones realizadas / propuestas (versión robusta) : </p>
                 <ul>
-                  <li>Implementación de análisis de antigüedad de stock (<2 meses, <6 meses, >2 años) para detectar productos obsoletos.</li>
-                  <li>Análisis de Pareto: Clasificación del inventario para enfocar esfuerzos en los productos que generan el 80% del valor.</li>
+                  <li>Migración del proyecto a Google Cloud para liberar los datos del aislamiento de la red local.</li>
+                  <li>Uso de Cloud Storage como repositorio de ingesta (raw) para los CSV de sensores.</li>
+                  <li>Implementación de pipelines automáticos con Cloud Functions / Cloud Run para:</li>
+                  <ul>
+                    <li>Procesar y limpiar datos (detección de golpes fantasmas, validación de rangos, normalización).</li>
+                    <li>Unificar datos del sensor con datos ingresados desde AppSheet.</li>
+                  </ul>
+                  <li>Almacenamiento central en BigQuery, estructurado en capas <strong>Bronze → Silver → Gold</strong> para garantizar trazabilidad y auditoría.</li>
+                  <li>Integración con Looker Studio para dashboards empresariales basados directamente en BigQuery.</li>
                 </ul>
-                <h5>Módulo 4: Análisis Financiero</h5>
+                <p>Impacto:  </p>
                 <ul>
-                  <li>Valuación del stock a precio de venta ($996M) vs. costo ($377M).</li>
-                  <li>Desglose por categoría (ej. "Kit MOTO", "Cable SUPERIOR") para entender dónde está inmovilizado el capital.</li>
+                    <li>Datos accesibles y seguros para todas las áreas (Calidad, Producción, Ingeniería, Compras).</li>
+                    <li>Eliminación de dependencias frágiles como hojas de cálculo manipuladas manualmente.</li>
+                    <li>Datos trazables, auditables y consistentes (alineado a prácticas ISO 9001).</li>
+                    <li>Automatización completa de ingesta, consolidación y validación.</li>
+                    <li>Base sólida para futuros modelos predictivos (rechazos, anomalías de ciclo, mantenimiento).</li>
                 </ul>
+                <p><strong>Conclusión</strong></p>
+                <br>
+                <p>Dividir la solución en dos etapas refleja una evolución clara:</p>
+                <p>primero se resolvieron necesidades operativas críticas, 
+                    y luego se escaló hacia una arquitectura profesional que garantiza calidad, 
+                    disponibilidad y gobernanza del dato.
+                </p>
+                <p>Esta estrategia permitió transformar un sistema aislado y 
+                    limitado en una solución integral, 
+                    automatizada y escalable para toda la organización.
+                </p>
+              
                </div> 
             </div>
             <div class="dashboard-links-container">
@@ -294,8 +355,8 @@
 
     <section id="contact">
         <h2>Contacto</h2>
-        <p>¿Tienes un proyecto en mente o quieres conversar sobre datos?</p>
-        
+<!--       <p>¿Tienes un proyecto en mente o quieres conversar sobre datos?</p>
+--> 
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/karengonzalesch" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="mailto:gonzaleschurquekaren@gmail.com"><i class="fas fa-envelope"></i></a>
