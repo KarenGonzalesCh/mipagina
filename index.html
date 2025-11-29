@@ -152,7 +152,7 @@
     </section>
 
     <section id="portfolio">
-        <h2 class="section-title">Portafolio Destacado</h2>
+        <h2 class="section-title">Portafolio</h2>
         
         <div class="project-container">
             <div class="project-description">
@@ -244,17 +244,14 @@
 
                         <div class="project-container">
             <div class="project-description">
-                <h3>Análisis de Rendimiento Operativo</h3>
+                <h3>Sistema Integrado de Producción y Calidad</h3>
                 <br>
                 <p><strong>Contexto:</strong></p>
                <div class="lista-solucion">
-                <br>
                 <p>En planta se registraban datos de producción directamente desde sensores instalados en las máquinas inyectoras. 
                 Estos sensores enviaban archivos CSV con información operativa, como tiempos de ciclo, tiempos de parada y cantidad de piezas, 
                 que permitía calcular indicadores de rendimiento y disponibilidad.</p>
-                <br>
                 <p>Sin embargo, el sistema presentaba tres limitaciones críticas:</p>
-                <br>
                 <ul>
                     <li>No registraba piezas no conformes, 
                         lo que impedía obtener el indicador de calidad y calcular el OEE completo.</li>
@@ -262,7 +259,6 @@
                     <li>La información permanecía aislada en la red local de planta, sin acceso para otras áreas.</li>
 
                 </ul>
-            
                 <br>
                 <p><strong>Solución en Dos Etapas:</strong></p>     
                 <ul>
@@ -272,40 +268,41 @@
             </div>
                <div class="lista-solucion">
                 <h5><strong>ETAPA 1 : </strong> Incorporación de AppSheet para completar la información operativa</h5>
-                <br>
-                <p>Acciones realizadas:</p>
+                <p><u>Acciones realizadas:</u></p>
                 <ul>
                     <li>Desarrollo de un formulario en AppSheet para el registro manual de piezas no conformes.</li>
                     <li>Integración del formulario con Google Sheets para unificar información del sensor con la carga operativa.</li>
                     <li>Implementación de reglas de consistencia para corregir lecturas erróneas mediante el contraste producción esperada vs. real.</li>
                 </ul>
-                <br>
-                <p>Impacto:</p>
+                <p><u>Impacto:</u></p>
                 <ul>
                     <li>Incorporación del indicador de calidad de manera confiable.</li>
                     <li>Eliminación del sesgo por golpes fantasmas.</li>
                     <li>Obtención de un OEE completo (Disponibilidad, Rendimiento y Calidad).</li>
                     <li>Participación de los operarios en la mejora de la calidad del dato.</li>
                 </ul>
-                <br>
                 <h5><strong>ETAPA 2 : </strong> Migración y fortalecimiento de la arquitectura con enfoque de Ingeniería de Datos</h5>
                 <p>Una vez completada la captura integral de la información, 
                     se avanzó hacia una arquitectura más escalable, 
-                    gobernada y apta para análisis corporativo.</p>
-                <br>
-                <p>Acciones realizadas / propuestas (versión robusta) : </p>
+                    gobernada y apta para análisis corporativo.
+                </p>
+                <p><u>Acciones realizadas / propuestas (versión robusta) : </u></p>
                 <ul>
                   <li>Migración del proyecto a Google Cloud para liberar los datos del aislamiento de la red local.</li>
                   <li>Uso de Cloud Storage como repositorio de ingesta (raw) para los CSV de sensores.</li>
                   <li>Implementación de pipelines automáticos con Cloud Functions / Cloud Run para:</li>
                   <ul>
-                    <li>Procesar y limpiar datos (detección de golpes fantasmas, validación de rangos, normalización).</li>
-                    <li>Unificar datos del sensor con datos ingresados desde AppSheet.</li>
+                    <ul>
+                        <li>Procesar y limpiar datos (detección de golpes fantasmas, validación de rangos, normalización).</li>
+                        <li>Unificar datos del sensor con datos ingresados desde AppSheet.</li>
+                  </ul>
+
                   </ul>
                   <li>Almacenamiento central en BigQuery, estructurado en capas <strong>Bronze → Silver → Gold</strong> para garantizar trazabilidad y auditoría.</li>
                   <li>Integración con Looker Studio para dashboards empresariales basados directamente en BigQuery.</li>
                 </ul>
-                <p>Impacto:  </p>
+
+                <p><u>Impacto:</u></p>
                 <ul>
                     <li>Datos accesibles y seguros para todas las áreas (Calidad, Producción, Ingeniería, Compras).</li>
                     <li>Eliminación de dependencias frágiles como hojas de cálculo manipuladas manualmente.</li>
@@ -313,10 +310,12 @@
                     <li>Automatización completa de ingesta, consolidación y validación.</li>
                     <li>Base sólida para futuros modelos predictivos (rechazos, anomalías de ciclo, mantenimiento).</li>
                 </ul>
+                <br>
+
                 <p><strong>Conclusión</strong></p>
                 <br>
                 <p>Dividir la solución en dos etapas refleja una evolución clara:</p>
-                <p>primero se resolvieron necesidades operativas críticas, 
+                <p>Primero se resolvieron necesidades operativas críticas, 
                     y luego se escaló hacia una arquitectura profesional que garantiza calidad, 
                     disponibilidad y gobernanza del dato.
                 </p>
