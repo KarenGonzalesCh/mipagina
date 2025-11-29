@@ -293,3 +293,73 @@ footer {
 .lista-solucion strong {
     color:   rgba;        /* Blanco brillante para destacar */
 }
+
+/* Contenedor de la sección completa (para asegurar fondo blanco) */
+#tools {
+    background-color: #ffffff;
+    padding: 4rem 1rem;
+}
+
+.section-title {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.underline {
+    width: 50px;
+    height: 3px;
+    background-color: #3498db; /* El azul de tu imagen */
+    margin: 0 auto 3rem auto;
+}
+
+/* Contenedor de la cuadrícula */
+.tools-grid {
+    display: grid;
+    /* Columnas automáticas */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Tarjeta individual de cada herramienta */
+.tool-card {
+    background: #ffffff; /* CAMBIO: Fondo Blanco */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave gris */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid #e0e0e0; /* Borde gris muy claro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Efecto al pasar el mouse por encima */
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.15); /* Sombra azulada suave */
+    border-color: #3498db; /* CAMBIO: Borde Azul al pasar el mouse */
+}
+
+/* Estilo de los iconos */
+.tool-icon {
+    font-size: 3rem; 
+    margin-bottom: 1rem;
+    color: #3498db; /* CAMBIO: Azul corporativo en lugar de verde neón */
+}
+
+/* Título de la herramienta */
+.tool-card h3 {
+    font-size: 1rem;
+    color: #333333; /* CAMBIO: Texto oscuro */
+    margin: 0;
+    font-weight: 600;
+    text-transform: uppercase; /* Opcional: para que se vea como en Servicios */
+}
