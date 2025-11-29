@@ -17,12 +17,11 @@ Este proyecto fue construido utilizando estándares web modernos:
 1.  **Sobre mí:** Mi perfil profesional y académico (UNSAM).
 2.  **Servicios:** Lo que ofrezco (Dashboards, Optimización, Análisis).
 3.  **Portafolio:** Muestras de mis trabajos (incluyendo embeds de Looker Studio).
-4.  **Contacto:** ``Enlaces directos a mi LinkedIn y correo.``
+4.  **Contacto:**
 
 ## 📬 Contacto
 Si tienes alguna pregunta o propuesta, no dudes en contactarme:
 * 💼 [LinkedIn](https://www.linkedin.com/in/karengonzalesch)
-``*📧 [Email ]``
 
 ---
 © 2025 Karen Gonzales.

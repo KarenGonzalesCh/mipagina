@@ -1,0 +1,295 @@
+/* --- 1. VARIABLES Y ESTILOS GENERALES --- */
+:root {
+    --primary-color: #2c3e50;      /* Azul oscuro principal */
+    --secondary-color: #34495e;    /* Azul grisáceo */
+    --accent-color: #3498db;       /* Azul brillante para detalles */
+    --bg-light: #ffffff;           /* Fondo blanco */
+    --bg-alt: #dae6ec;             /* Fondo gris azulado */
+    --text-color: #555555;
+    --text-light: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* --- 2. NAVEGACIÓN --- */
+nav {
+    background-color: var(--bg-light);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo { font-size: 1.2rem; font-weight: 600; color: var(--primary-color); }
+
+.nav-links { display: flex; gap: 20px; }
+.nav-links a { 
+    color: var(--secondary-color); 
+    font-size: 0.9rem; 
+    font-weight: 600;
+}
+.nav-links a:hover { color: var(--accent-color); }
+
+.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+/* --- 3. HERO (PORTADA) --- */
+.hero {
+    /* Asegúrate de que la URL de la imagen sea correcta */
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    padding: 0 20px;
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 10px; font-weight: 600; }
+.hero h2 { font-size: 1.5rem; font-weight: 300; margin-bottom: 30px; }
+
+/* Botón transparente del Hero */
+.btn {
+    padding: 12px 30px;
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+    display: inline-block;
+}
+.btn:hover { background: var(--text-light); color: var(--primary-color); }
+
+/* --- 4. FRASE (Quote Bar) --- */
+.quote-section {
+    background-color: var(--bg-alt);
+    padding: 40px 20px;
+    text-align: center;
+    font-style: italic;
+    border-left: 5px solid var(--primary-color);
+}
+.quote-section blockquote { font-size: 1.2rem; max-width: 800px; margin: 0 auto; }
+
+/* --- 5. SECCIONES COMUNES --- */
+section { padding: 60px 10%; }
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+    position: relative;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 15px auto 0;
+}
+
+/* --- 6. SERVICIOS --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.service-card {
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+.service-card:hover { transform: translateY(-5px); }
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+.service-card h3 { font-size: 1.1rem; margin-bottom: 15px; color: var(--primary-color); font-weight: 600;}
+
+/* --- 7. SOBRE MÍ --- */
+#about { background-color: var(--bg-alt); }
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+.about-text { flex: 2; }
+.about-image { 
+    flex: 1; 
+    text-align: center; 
+}
+.about-image img {
+    max-width: 100%;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- 8. PORTFOLIO & DASHBOARD --- */
+.project-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+.project-description { margin-bottom: 20px; }
+.project-description h3 { color: var(--primary-color); font-weight: 600; margin-bottom: 10px;}
+
+/* Wrapper para el iframe (ajustado para reportes verticales) */
+.iframe-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 100%; 
+    border: 1px solid #ddd;
+}
+.iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- ESTILOS PARA LOS BOTONES DEL DASHBOARD (COLOR NARANJA) --- */
+.dashboard-links-container {
+    display: flex;       
+    flex-wrap: wrap;     
+    gap: 15px;           
+    justify-content: center; 
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.dashboard-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 25px;      
+    
+    /* ESTILO NARANJA Y RECTANGULAR */
+    background-color: #e67e22; /* Naranja vibrante */
+    color: #ffffff;            /* Letra blanca para contraste */
+    border: none;              
+    border-radius: 6px;        /* Bordes apenas redondeados (Rectangular) */
+    
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+    text-decoration: none;     
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+.dashboard-btn:hover {
+    background-color: #d35400; /* Un naranja más oscuro */
+    color: #ffffff;
+    transform: translateY(-3px); 
+    box-shadow: 0 7px 14px rgba(211, 84, 0, 0.4); 
+}
+
+/* Ajuste para iconos dentro del botón */
+.dashboard-btn i {
+    font-size: 1.1rem;
+}
+
+/* --- 9. CONTACTO Y FOOTER --- */
+#contact { background-color: var(--primary-color); color: white; text-align: center; padding: 50px 20px; }
+#contact h2 { color: white; }
+.social-icons { margin-top: 30px; }
+.social-icons a {
+    font-size: 2rem;
+    color: white;
+    margin: 0 15px;
+}
+.social-icons a:hover { color: var(--accent-color); }
+
+footer {
+    background-color: #1a252f;
+    color: #7f8c8d;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    }
+    .nav-links.active { display: flex; }
+    .menu-toggle { display: block; color: var(--primary-color); }
+    
+    .hero h1 { font-size: 2rem; }
+    .about-content { flex-direction: column; }
+}
+
+/* Asegura que los títulos tengan espacio */
+.lista-solucion h5 {
+    color: hsl(187, 73%, 16%); /* O el color que uses en tu tema */
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Estilo para la lista de viñetas */
+.lista-solucion ul {
+    list-style-type: disc; /* Esto crea el puntito relleno */
+    padding-left: 20px;    /* Espacio a la izquierda para el punto */
+    margin-bottom: 15px;   /* Espacio debajo de cada bloque */
+}
+
+/* Estilo para cada renglón */
+.lista-solucion li {
+    margin-bottom: 5px;    /* Separación entre renglones */
+    line-height: 1.5;      /* Altura de línea para leer mejor */
+    color:  rgba;        /* Color del texto (ajustar si tienes fondo blanco) */
+}
+
+/* (Opcional) Resaltar las palabras clave como "KPI clave" */
+.lista-solucion strong {
+    color:   rgba;        /* Blanco brillante para destacar */
+}

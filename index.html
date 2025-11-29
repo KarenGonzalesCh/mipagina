@@ -4,231 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karen Gonzales - Analista de Datos</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <style>
-        /* --- 1. VARIABLES Y ESTILOS GENERALES --- */
-        :root {
-            --primary-color: #2c3e50;      /* Azul oscuro principal */
-            --secondary-color: #34495e;    /* Azul grisáceo */
-            --accent-color: #3498db;       /* Azul brillante para detalles */
-            --bg-light: #ffffff;           /* Fondo blanco */
-            --bg-alt: #dae6ec;             /* Fondo gris azulado (como la referencia) */
-            --text-color: #555555;
-            --text-light: #ffffff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300; /* Estilo fino como la referencia */
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-
-        /* --- 2. NAVEGACIÓN --- */
-        nav {
-            background-color: var(--bg-light);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .logo { font-size: 1.2rem; font-weight: 600; color: var(--primary-color); }
-
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { 
-            color: var(--secondary-color); 
-            font-size: 0.9rem; 
-            font-weight: 600;
-        }
-        .nav-links a:hover { color: var(--accent-color); }
-
-        /* Botón hamburguesa móvil */
-        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
-
-        /* --- 3. HERO (PORTADA) --- */
-        .hero {
-            /* Imagen de fondo genérica de tecnología/datos - Puedes cambiar la URL */
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--text-light);
-            padding: 0 20px;
-        }
-
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; font-weight: 600; }
-        .hero h2 { font-size: 1.5rem; font-weight: 300; margin-bottom: 30px; }
-        .btn {
-            padding: 12px 30px;
-            border: 2px solid var(--text-light);
-            color: var(--text-light);
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-top: 20px;
-        }
-        .btn:hover { background: var(--text-light); color: var(--primary-color); }
-
-        /* --- 4. FRASE (Quote Bar) --- */
-        .quote-section {
-            background-color: var(--bg-alt);
-            padding: 40px 20px;
-            text-align: center;
-            font-style: italic;
-            border-left: 5px solid var(--primary-color); /* Detalle de diseño */
-        }
-        .quote-section blockquote { font-size: 1.2rem; max-width: 800px; margin: 0 auto; }
-
-        /* --- 5. SECCIONES COMUNES --- */
-        section { padding: 60px 10%; }
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary-color);
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--accent-color);
-            margin: 15px auto 0;
-        }
-
-        /* --- 6. SERVICIOS --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .service-card {
-            text-align: center;
-            padding: 20px;
-            transition: transform 0.3s;
-        }
-        .service-card:hover { transform: translateY(-5px); }
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-        .service-card h3 { font-size: 1.1rem; margin-bottom: 15px; color: var(--primary-color); font-weight: 600;}
-
-        /* --- 7. SOBRE MÍ (Color de fondo alterno) --- */
-        #about { background-color: var(--bg-alt); }
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-        }
-        .about-text { flex: 2; }
-        .about-image { 
-            flex: 1; 
-            text-align: center; 
-        }
-        .about-image img {
-            max-width: 100%;
-            border-radius: 50%; /* Foto redonda */
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        /* --- 8. PORTFOLIO & DASHBOARD --- */
-        .project-container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-        }
-        
-        .project-description { margin-bottom: 20px; }
-        .project-description h3 { color: var(--primary-color); font-weight: 600; margin-bottom: 10px;}
-
-        /* Responsive Iframe Wrapper */
-        .iframe-wrapper {
-            position: relative;
-            overflow: hidden;
-            padding-top: 75%; /* Aspect Ratio 4:3 (ajustar si es necesario) */
-            border: 1px solid #ddd;
-        }
-        .iframe-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* --- 9. CONTACTO Y FOOTER --- */
-        #contact { background-color: var(--primary-color); color: white; text-align: center; padding: 50px 20px; }
-        #contact h2 { color: white; }
-        .social-icons { margin-top: 30px; }
-        .social-icons a {
-            font-size: 2rem;
-            color: white;
-            margin: 0 15px;
-        }
-        .social-icons a:hover { color: var(--accent-color); }
-        
-        footer {
-            background-color: #1a252f;
-            color: #7f8c8d;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.8rem;
-        }
-
-        /* --- RESPONSIVE MOBILE --- */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Se oculta en móvil */
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                background: white;
-                width: 100%;
-                text-align: center;
-                padding: 20px 0;
-                box-shadow: 0 5px 5px rgba(0,0,0,0.1);
-            }
-            .nav-links.active { display: flex; } /* Clase para mostrar menú con JS */
-            .menu-toggle { display: block; color: var(--primary-color); }
-            
-            .hero h1 { font-size: 2rem; }
-            .about-content { flex-direction: column; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
@@ -253,7 +34,7 @@
 
     <section class="quote-section">
         <blockquote>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "Los datos son el nuevo petróleo. Es valioso, pero si no se refina, no se puede utilizar realmente."
         </blockquote>
     </section>
 
@@ -262,7 +43,7 @@
         <div class="services-grid">
             <div class="service-card">
                 <i class="fas fa-chart-line service-icon"></i> <h3>Dashboards Interactivos</h3>
-                <p>Creación de tableros de control dinámicos para la toma de decisiones basada en datos.</p>
+                <p>Tableros de control dinámicos para la toma de decisiones basada en datos.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-database service-icon"></i> <h3>Análisis de Datos</h3>
@@ -298,6 +79,71 @@
         
         <div class="project-container">
             <div class="project-description">
+                <h3>Control de KPIs de Producción y Valuación de Stock</h3>
+                <br>
+                <p><strong>Contexto:</strong></p>
+               <div class="lista-solucion">
+
+                <ul>
+                    <li>La empresa necesitaba visibilidad granular sobre la brecha entre los objetivos de producción y la realidad operativa.</li>
+                    <li>Faltaba control sobre la rotación del inventario, lo que generaba acumulación de stock inmovilizado y desconexión entre los costos de fabricación y el precio de venta.</li>
+                </ul>
+            </div>
+                <br>
+                <p><strong>Solución:</strong></p>      
+
+               <div class="lista-solucion">
+                <h5>Módulo 1: Eficiencia de Producción</h5>
+                <ul>
+                  <li>Comparativa visual de Conjuntos Objetivo vs. Producidos.</li>
+                  <li>Seguimiento de productividad por persona.</li>
+                  <li>KPI clave: Detección de una brecha de producción de 19.490 unidades respecto al objetivo anual.</li>
+                </ul>
+                  <h5>Módulo 2: Gestión de Depósito (Picking)</h5>
+                <ul>
+                  <li>Análisis de eficiencia de preparación de pedidos.</li>
+                  <li>KPI clave: Visualización de la eficiencia del picking (9.808 realizados vs 30.000 objetivo), permitiendo identificar falta de capacidad operativa.</li>
+                </ul>
+                <h5>Módulo 3: Salud del Inventario</h5>
+                <ul>
+                  <li>Implementación de análisis de antigüedad de stock (<2 meses, <6 meses, >2 años) para detectar productos obsoletos.</li>
+                  <li>Análisis de Pareto: Clasificación del inventario para enfocar esfuerzos en los productos que generan el 80% del valor.</li>
+                </ul>
+                <h5>Módulo 4: Análisis Financiero</h5>
+                <ul>
+                  <li>Valuación del stock a precio de venta ($996M) vs. costo ($377M).</li>
+                  <li>Desglose por categoría (ej. "Kit MOTO", "Cable SUPERIOR") para entender dónde está inmovilizado el capital.</li>
+                </ul>
+               </div> 
+            </div>
+            <div class="dashboard-links-container">
+                <a href="https://lookerstudio.google.com/embed/reporting/c104d531-38fc-473c-b02e-67245cba7a46/page/p_2r9hf11isc" target="_blank" class="dashboard-btn">
+                    <i class="fas fa-industry"></i> Producción
+                </a>
+                <a href="https://lookerstudio.google.com/embed/reporting/c104d531-38fc-473c-b02e-67245cba7a46/page/p_qvh2gpq1id" target="_blank" class="dashboard-btn">
+                    <i class="fas fa-truck-loading"></i> Depósito (Picking)
+                </a>
+                <a href="https://lookerstudio.google.com/embed/reporting/c104d531-38fc-473c-b02e-67245cba7a46/page/p_zsmh87u1id" target="_blank" class="dashboard-btn">
+                    <i class="fas fa-sync-alt"></i> Rotación Inventario
+                </a>
+                <a href="https://lookerstudio.google.com/embed/reporting/c104d531-38fc-473c-b02e-67245cba7a46/page/p_byntawg2id" target="_blank" class="dashboard-btn">
+                    <i class="fas fa-dollar-sign"></i> Costo y Venta
+                </a>
+             </div>
+        
+            <div class="iframe-wrapper">
+                <iframe 
+                    src="https://lookerstudio.google.com/embed/reporting/c104d531-38fc-473c-b02e-67245cba7a46/page/p_2r9hf11isc" 
+                    frameborder="0" 
+                    style="border:0" 
+                    allowfullscreen 
+                    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="project-container">
+            <div class="project-description">
                 <h3>Análisis de Ventas e Inventario</h3>
                 <p>
                     Este dashboard interactivo permite visualizar KPIs clave de rendimiento. 
@@ -314,7 +160,7 @@
                     sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
                 </iframe>
             </div>
-        </div>
+        </div> 
 
         <div style="text-align: center; margin-top: 40px; color: #777;">
             <p><em>Próximamente más proyectos...</em></p>
@@ -327,8 +173,8 @@
         <p>¿Tienes un proyecto en mente o quieres conversar sobre datos?</p>
         
         <div class="social-icons">
-            <a href="www.linkedin.com/in/karengonzalesch" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:tu-email@ejemplo.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/karengonzalesch" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:gonzaleschurquekaren@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
     </section>
 
@@ -337,7 +183,6 @@
     </footer>
 
     <script>
-        // Script para el menú hamburguesa en celulares
         const menuToggle = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
 
@@ -345,7 +190,6 @@
             navLinks.classList.toggle('active');
         });
 
-        // Script para cerrar el menú al hacer clic en un enlace (mejor experiencia en móvil)
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
