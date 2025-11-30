@@ -4,7 +4,7 @@ Este repositorio contiene el código fuente de mi sitio web personal y portafoli
 
 ## 🚀 Ver el sitio en vivo
 Puedes visitar mi portafolio online aquí:
-🔗 **https://karengonzalesch.github.io/mipagina/**
+🔗 **https://mipagina-miuhcg201-karengonzaleschs-projects.vercel.app/**
 
 ## 🛠️ Tecnologías utilizadas
 Este proyecto fue construido utilizando estándares web modernos:
