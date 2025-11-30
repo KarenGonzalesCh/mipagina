@@ -30,6 +30,7 @@
 .dashboard-btn {
     display: inline-flex;
     align-items: center;
+    gap: 8px;
     padding: 12px 25px;
     background-color: #e67e22;
     color: white;
