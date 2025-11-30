@@ -27,9 +27,9 @@
             <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-links" id="nav-links">
-            <li><a href="#services">Servicios</a></li>
+ <!--          <li><a href="#services">Servicios</a></li> --> 
             <li><a href="#about">Sobre Mí</a></li>
-            <li><a href="#portfolio">Portafolio</a></li>
+            <li><a href="#portfolio">Porfolio</a></li>
             <li><a href="#contact">Contacto</a></li>
         </ul>
     </nav>
@@ -142,25 +142,64 @@
 
     <section id="portfolio">
 
-        <h2 class="section-title">Portafolio</h2>
+        <h2 class="section-title">PORTFOLIO</h2>
 
         <div class="portfolio-grid">
 
             <div class="portfolio-card">
                 <h4 style="text-align: center;"><strong>Control de KPIs de Producción y Valuación de Stock </strong></h4>
                 <br>
-                <p class="tools-used">
-                    <strong>Herramientas:</strong> Looker Studio, Google Sheets, SQL
-                </p>
+                <strong>Herramientas:</strong>
+                <h5 class="tools-used">
+
+                <div class="tech-stack-container" style="background-color: #f8f9fa; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                    <ul style="list-style: none; padding: 0; text-align: left;">
+                        <li style="margin-bottom: 5px;">
+                            <u>Fuentes de Datos:</u> Odoo ERP (Ventas/Stock), Google Sheets (Objetivos)
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <u>Base de Datos:</u> PostgreSQL (Backend de Odoo)
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <u>Transformación:</u> SQL Queries / Combinación de datos
+                        </li>
+                        <li style="margin-bottom: 0;">
+                            <u>Visualización:</u> Looker Studio
+                        </li>
+                    </ul>
+                </div>
+                </h5>
+
                 <button class="btn-card" onclick="verProyecto('#proyecto1')">Ver más</button>
             </div>
 
             <div class="portfolio-card">
                 <h4 style="text-align: center;"><strong>Sistema Integrado de Producción y Calidad </strong></h4>
                 <br>
-                <p class="tools-used">
-                    <strong>Herramientas:</strong> Looker Studio, Google Sheets, SQL
-                </p>
+                <strong>Herramientas:</strong>
+                <h5 class="tools-used">
+                
+                <div class="tech-stack-container" style="background-color: #f8f9fa; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                    <ul style="list-style: none; padding: 0;text-align: left;">
+                        <li style="margin-bottom: 5px;">
+                            <u>Ingesta:</u> Sensores IoT (CSV), AppSheet (Input Manual)
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <u>Almacenamiento:</u> Google Sheets (Etapa 1), Cloud Storage (Etapa 2)
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <u>Procesamiento:</u> Cloud Functions / Cloud Run
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <u>Data Warehouse:</u> Google BigQuery (Capas Bronze/Silver/Gold)
+                        </li>
+                        <li style="margin-bottom: 0;">
+                            <u>Visualización:</u> Looker Studio
+                        </li>
+                    </ul>
+                </div>
+                    
+                </h5>
                 <button class="btn-card" onclick="verProyecto('#proyecto2')">Ver más</button>
             </div>
 
@@ -168,7 +207,7 @@
 
         <!-- Proyecto 1 -->
         <div id="proyecto1" class="project-container hidden">
-            <button class="back-btn" onclick="volverAlPortfolio()">← Volver al Portafolio</button>
+            <button class="back-btn" onclick="volverAlPortfolio()">← Volver al Portfolio</button>
 
             <div class="project-description">
                 <br>
@@ -249,7 +288,7 @@
 
         <!-- Proyecto 2 -->
         <div id="proyecto2" class="project-container hidden">
-            <button class="back-btn" onclick="volverAlPortfolio()">← Volver al Portafolio</button>
+            <button class="back-btn" onclick="volverAlPortfolio()">← Volver al Portfolio</button>
 
             <div class="project-description">
                 <br>
@@ -337,7 +376,10 @@
                     limitado en una solución integral, 
                     automatizada y escalable para toda la organización.
                 </p>
-              
+                <div class="proyecto-imagen-conclusion">
+                   <img src="imagenes/fondos/transformacion_datos.png" alt="Transformación de datos en dos etapas">
+                </div>
+
                </div> 
             </div>
 
@@ -359,6 +401,7 @@
                     sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
                 </iframe>
             </div>
+
 
         </div>
 
