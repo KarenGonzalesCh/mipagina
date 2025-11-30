@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karen Gonzales - Analista de Datos</title>
+    <title>Karen Gonzales - Data Analyst & Engineer</title>
     
+    <!-- Fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     
+    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css"> 
+    <!-- CSS dividido en módulos -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <nav>
@@ -28,101 +36,79 @@
 
     <header class="hero">
         <h1>Karen Gonzales</h1>
-        <h2>Analista de Datos</h2>
+        <h2>Data Analyst & Engineer</h2>
+
         <a href="#portfolio" class="btn">Ver Proyectos</a>
     </header>
 
-    <section class="quote-section">
-        <blockquote>
-            "Los datos son el nuevo petróleo. Es valioso, pero si no se refina, no se puede utilizar realmente."
-        </blockquote>
-    </section>
-
-
     <section id="tools">
-    <h2 class="section-title">Herramientas</h2>
-    <br>
+        <h2 class="section-title">Herramientas</h2>
+        <br>
 
-    <div class="tools-grid">
-        <div class="tool-card">
-            <i class="fab fa-python tool-icon"></i>
-            <h3>Python</h3>
-        </div>
+        <div class="tools-grid">
 
-        <div class="tool-card">
-            <i class="fab fa-r-project tool-icon"></i>
-            <h3>R Studio</h3>
-        </div>
-        <div class="tool-card">
-            <i class="fas fa-file-excel tool-icon"></i>
-            <h3>Google Sheets</h3>
-        </div>
-
-        <div class="tool-card">
-            <i class="fas fa-database tool-icon"></i>
-            <h3>PostgreSQL</h3>
-        </div>
-
-        <div class="tool-card">
-            <i class="fas fa-cloud tool-icon"></i> <h3>BigQuery</h3>
-        </div>
-
-        <div class="tool-card">
-            <i class="fab fa-google tool-icon"></i>
-            <h3>Google Ads</h3>
-        </div>
-
-        <div class="tool-card">
-            <i class="fas fa-chart-pie tool-icon"></i>
-            <h3>Looker Studio</h3>
-        </div>
-
-        <div class="tool-card">
-            <i class="fas fa-chart-bar tool-icon"></i>
-            <h3>Power BI</h3>
-        </div>
-
-        <div class="tool-card">
-            <i class="fas fa-project-diagram tool-icon"></i>
-            <h3>n8n</h3>
-        </div>
-
-        <div class="tool-card">
-            <img src="imagenes/appsheet-logo.png" alt="AppSheet Logo" class="tool-img">
-            <h3>AppSheet</h3>
-        </div>
-
-        <div class="tool-card">
-            <img src="imagenes/power-automate-logo.png" alt="Power Automate Logo" class="tool-img">
-            <h3>Power Automate</h3>
-        </div>
-
-
-    </div>
-    </section>
-
-
-<!--
-
-    <section id="services">
-        <h2 class="section-title">Servicios</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-chart-line service-icon"></i> <h3>Dashboards Interactivos</h3>
-                <p>Tableros de control dinámicos para la toma de decisiones basada en datos.</p>
+            <div class="tool-card">
+                <i class="fab fa-python tool-icon"></i>
+                <h3>Python</h3>
             </div>
-            <div class="service-card">
-                <i class="fas fa-database service-icon"></i> <h3>Análisis de Datos</h3>
-                <p>Procesamiento y limpieza de datos para transformar información cruda en insights.</p>
+
+            <div class="tool-card">
+                <i class="fab fa-r-project tool-icon"></i>
+                <h3>R Studio</h3>
             </div>
-            <div class="service-card">
-                <i class="fas fa-cogs service-icon"></i> <h3>Optimización</h3>
-                <p>Identificación de puntos de mejora en procesos industriales mediante análisis de datos.</p>
+
+            <div class="tool-card">
+                <i class="fas fa-file-excel tool-icon"></i>
+                <h3>Google Sheets</h3>
             </div>
+
+            <div class="tool-card">
+                <i class="fas fa-database tool-icon"></i>
+                <h3>PostgreSQL</h3>
+            </div>
+
+            <div class="tool-card">
+                <img src="imagenes/logos/bigquery_logo.png" alt="BigQuery logo" class="tool-img">
+                <h3>BigQuery</h3>
+            </div>
+
+            <div class="tool-card">
+                <i class="fab fa-google tool-icon"></i>
+                <h3>Google Ads</h3>
+            </div>
+
+            <div class="tool-card">
+                <i class="fas fa-chart-pie tool-icon"></i>
+                <h3>Looker Studio</h3>
+            </div>
+
+            <div class="tool-card">
+                <i class="fas fa-chart-bar tool-icon"></i>
+                <h3>Power BI</h3>
+            </div>
+
+            <div class="tool-card">
+                <i class="fas fa-project-diagram tool-icon"></i>
+                <h3>n8n</h3>
+            </div>
+
+            <div class="tool-card">
+                <img src="imagenes/logos/appsheet-logo.png" alt="AppSheet Logo" class="tool-img">
+                <h3>AppSheet</h3>
+            </div>
+
+            <div class="tool-card">
+                <img src="imagenes/logos/power-automate-logo.png" alt="Power Automate Logo" class="tool-img">
+                <h3>Power Automate</h3>
+            </div>
+
+            <div class="tool-card">
+                <i class="fas fa-cloud tool-icon"></i>
+                <h3>GCP</h3>
+            </div>
+
         </div>
     </section>
-
--->
 
     <section id="about">
         <h2 class="section-title">Sobre Mí</h2>
@@ -130,118 +116,137 @@
             <div class="about-text">
                 <p>
                     Hola, soy Karen. Soy estudiante avanzada de <strong>Ingeniería Industrial</strong> y <strong>Ciencia de Datos</strong> en la UNSAM, 
-                    apasionada por conectar el mundo de los procesos productivos con el potencial de la analítica.
+                    apasionada por conectar el mundo de los procesos productivos con el potencial de la analítica, con una marcada orientación a la calidad industrial y la mejora continua.
                 </p>
+
                 <br>
 
                 <p>
                     Mi experiencia en la industria me enseñó que los datos no son solo números: son la clave para la mejora continua y la trazabilidad. 
-                    Me especializo en transformar información cruda en soluciones tangibles, ya sea automatizando tareas repetitivas, 
-                    construyendo tableros para la toma de decisiones o digitalizando registros de calidad. 
+                    Me especializo en transformar información cruda en soluciones tangibles, automatizando tareas repetitivas, 
+                    construyendo tableros para la toma de decisiones y digitalizando registros de calidad.
                 </p>
+
                 <p>
                     Busco aportar una visión analítica que optimice la eficiencia operativa y reduzca la incertidumbre.
                 </p>
+
                 <br>
-   
             </div>
+
             <div class="about-image">
-                <img src="imagenes/foto_fondo_durazno.png" alt="Karen Gonzales">
+                <img src="imagenes/fondos/foto_fondo_durazno.png" alt="Karen Gonzales">
             </div>
         </div>
     </section>
 
     <section id="portfolio">
-        <h2 class="section-title">Portafolio Destacado</h2>
-        
-        <div class="project-container">
+
+        <h2 class="section-title">Portafolio</h2>
+
+        <div class="portfolio-grid">
+
+            <div class="portfolio-card">
+                <h4 style="text-align: center;"><strong>Control de KPIs de Producción y Valuación de Stock </strong></h4>
+                <br>
+                <p class="tools-used">
+                    <strong>Herramientas:</strong> Looker Studio, Google Sheets, SQL
+                </p>
+                <button class="btn-card" onclick="verProyecto('#proyecto1')">Ver más</button>
+            </div>
+
+            <div class="portfolio-card">
+                <h4 style="text-align: center;"><strong>Sistema Integrado de Producción y Calidad </strong></h4>
+                <br>
+                <p class="tools-used">
+                    <strong>Herramientas:</strong> Looker Studio, Google Sheets, SQL
+                </p>
+                <button class="btn-card" onclick="verProyecto('#proyecto2')">Ver más</button>
+            </div>
+
+        </div>
+
+        <!-- Proyecto 1 -->
+        <div id="proyecto1" class="project-container hidden">
+            <button class="back-btn" onclick="volverAlPortfolio()">← Volver al Portafolio</button>
+
             <div class="project-description">
+
                 <h3>Control de KPIs de Producción y Valuación de Stock</h3>
                 <br>
+
                 <p><strong>Contexto:</strong></p>
-               <div class="lista-solucion">
 
-                <ul>
-                    <li>La empresa necesitaba visibilidad granular sobre la brecha entre los objetivos de producción y la realidad operativa.</li>
-                    <li>Faltaba control sobre la rotación del inventario, 
-                        lo que generaba acumulación de stock inmovilizado y desconexión entre los costos de fabricación y el precio de venta.</li>
-                </ul>
-            </div>
+                <div class="lista-solucion">
+                    <ul>
+                        <li>La empresa necesitaba visibilidad granular sobre la brecha entre los objetivos de producción y la realidad operativa.</li>
+                        <li>Faltaba control sobre la rotación del inventario, generando acumulación de stock inmovilizado.</li>
+                    </ul>
+                </div>
+
                 <br>
-                <p><strong>Solución:</strong></p>      
 
-               <div class="lista-solucion">
-                <h5>Módulo 1: Eficiencia de Producción</h5>
-                <ul>
-                  <li>Comparativa visual de Conjuntos Objetivo vs. Producidos.</li>
-                  <li>Seguimiento de productividad por persona.</li>
-                  <li>KPI clave: Detección de una brecha de producción de 19.490 unidades respecto al objetivo anual.</li>
-                </ul>
-                  <h5>Módulo 2: Gestión de Depósito (Picking)</h5>
-                <ul>
-                  <li>Análisis de eficiencia de preparación de pedidos.</li>
-                  <li>KPI clave: Visualización de la eficiencia del picking (9.808 realizados vs 30.000 objetivo), 
-                    permitiendo identificar falta de capacidad operativa.</li>
-                </ul>
-                <h5>Módulo 3: Salud del Inventario</h5>
-                <ul>
-                  <li>Implementación de análisis de antigüedad de stock (<2 meses, <6 meses, >2 años) para detectar productos obsoletos.</li>
-                  <li>Análisis de Pareto: Clasificación del inventario para enfocar esfuerzos en los productos que generan el 80% del valor.</li>
-                </ul>
-                <h5>Módulo 4: Análisis Financiero</h5>
-                <ul>
-                  <li>Valuación del stock a precio de venta ($996M) vs. costo ($377M).</li>
-                  <li>Desglose por categoría (ej. "Kit MOTO", "Cable SUPERIOR") para entender dónde está inmovilizado el capital.</li>
-                </ul>
-               </div> 
+                <p><strong>Solución:</strong></p>
+
+                <div class="lista-solucion">
+                    <h5>Módulo 1: Eficiencia de Producción</h5>
+                    <ul>
+                        <li>Comparativa visual objetivo vs. producido</li>
+                        <li>Seguimiento de productividad por persona</li>
+                        <li>KPI clave: detección de brechas de producción</li>
+                    </ul>
+
+                    <h5>Módulo 2: Gestión de Depósito</h5>
+                    <ul>
+                        <li>Análisis de eficiencia del picking</li>
+                        <li>Identificación de faltas de capacidad operativa</li>
+                    </ul>
+
+                    <h5>Módulo 3: Salud del Inventario</h5>
+                    <ul>
+                        <li>Análisis de antigüedad de stock</li>
+                        <li>Pareto para identificar productos críticos</li>
+                    </ul>
+
+                    <h5>Módulo 4: Análisis Financiero</h5>
+                    <ul>
+                        <li>Valuación del stock</li>
+                        <li>Desglose por categoría</li>
+                    </ul>
+                </div>
+
             </div>
+
             <div class="dashboard-links-container">
                 <a href="https://lookerstudio.google.com/embed/reporting/c104d531-38fc-473c-b02e-67245cba7a46/page/p_2r9hf11isc" target="_blank" class="dashboard-btn">
                     <i class="fas fa-industry"></i> Producción
                 </a>
                 <a href="https://lookerstudio.google.com/embed/reporting/c104d531-38fc-473c-b02e-67245cba7a46/page/p_qvh2gpq1id" target="_blank" class="dashboard-btn">
-                    <i class="fas fa-truck-loading"></i> Depósito (Picking)
+                    <i class="fas fa-truck-loading"></i> Depósito
                 </a>
                 <a href="https://lookerstudio.google.com/embed/reporting/c104d531-38fc-473c-b02e-67245cba7a46/page/p_zsmh87u1id" target="_blank" class="dashboard-btn">
-                    <i class="fas fa-sync-alt"></i> Rotación Inventario
+                    <i class="fas fa-sync-alt"></i> Rotación
                 </a>
                 <a href="https://lookerstudio.google.com/embed/reporting/c104d531-38fc-473c-b02e-67245cba7a46/page/p_byntawg2id" target="_blank" class="dashboard-btn">
-                    <i class="fas fa-dollar-sign"></i> Costo y Venta
+                    <i class="fas fa-dollar-sign"></i> Finanzas
                 </a>
-             </div>
-        
+            </div>
+
             <div class="iframe-wrapper">
                 <iframe 
                     src="https://lookerstudio.google.com/embed/reporting/c104d531-38fc-473c-b02e-67245cba7a46/page/p_2r9hf11isc" 
                     frameborder="0" 
-                    style="border:0" 
                     allowfullscreen 
                     sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
                 </iframe>
             </div>
+
         </div>
 
-        <div class="project-container">
-            <div class="project-description">
-                <h3>Análisis de Ventas e Inventario</h3>
-                <p>
-                    Este dashboard interactivo permite visualizar KPIs clave de rendimiento. 
-                    Utilicé Looker Studio para integrar diversas fuentes de datos, permitiendo filtrar por fechas y categorías para un análisis granular.
-                </p>
-            </div>
-            <div class="iframe-wrapper">
-                <iframe 
-                    src="https://lookerstudio.google.com/embed/reporting/3637127c-2fc7-4cf1-9bf2-4180592acebb/page/p_s6kq0q4jwd" 
-                    frameborder="0" 
-                    style="border:0" 
-                    allowfullscreen 
-                    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-                </iframe>
-            </div>
-        </div> 
+        <!-- Proyecto 2 -->
+        <div id="proyecto2" class="project-container hidden">
+            <button class="back-btn" onclick="volverAlPortfolio()">← Volver al Portafolio</button>
 
-
-        <div class="project-container">
             <div class="project-description">
                 <h3>Sistema Integrado de Producción y Calidad</h3>
                 <br>
@@ -325,62 +330,43 @@
               
                </div> 
             </div>
+
             <div class="dashboard-links-container">
-                <a href="https://lookerstudio.google.com/embed/reporting/79786bad-fabe-4eea-97dc-3140d1d2488b/page/p_98ssvzjevd" target="_blank" class="dashboard-btn">
-                    <i class="fas fa-industry"></i> OEE
+                <a href="https://lookerstudio.google.com/embed/reporting/79786bad-fabe-4eea-97dc-3140d1d2488b/page/p_98ssvzjevd" 
+                target="_blank"
+                class="dashboard-btn btn-turquesa">
+                    <i class="fas fa-industry"></i> INYECCIÓN
                 </a>
-            </div>  
+            </div>
+
             <div class="iframe-wrapper">
                 <iframe 
                     src="https://lookerstudio.google.com/embed/reporting/79786bad-fabe-4eea-97dc-3140d1d2488b/page/p_98ssvzjevd" 
                     frameborder="0" 
-                    style="border:0" 
                     allowfullscreen 
                     sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
                 </iframe>
             </div>
-        </div>
-        <div class="project-container">
-            <div class="project-description">
-                <h3>Análisis de Ventas e Inventario</h3>
-                <p>
-                    Este dashboard interactivo permite visualizar KPIs clave de rendimiento. 
-                    Utilicé Looker Studio para integrar diversas fuentes de datos, permitiendo filtrar por fechas y categorías para un análisis granular.
-                </p>
-            </div>
-            <div class="iframe-wrapper">
-                <iframe 
-                    src="https://lookerstudio.google.com/embed/reporting/3637127c-2fc7-4cf1-9bf2-4180592acebb/page/p_s6kq0q4jwd" 
-                    frameborder="0" 
-                    style="border:0" 
-                    allowfullscreen 
-                    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-                </iframe>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 40px; color: #777;">
-            <p><em>Próximamente más proyectos...</em></p>
-        </div>
 
-
+        </div>
 
     </section>
 
     <section id="contact">
         <h2>Contacto</h2>
-<!--       <p>¿Tienes un proyecto en mente o quieres conversar sobre datos?</p>
---> 
+
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/karengonzalesch" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="mailto:gonzaleschurquekaren@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
+
     </section>
 
     <footer>
         <p>&copy; 2025 Karen Gonzales. Creado con GitHub Pages.</p>
     </footer>
 
+    <!-- JS Navegación -->
     <script>
         const menuToggle = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
@@ -395,6 +381,9 @@
             });
         });
     </script>
+
+    <!-- JS funciones de proyectos -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>

@@ -59,7 +59,7 @@ nav {
 /* --- 3. HERO (PORTADA) --- */
 .hero {
     /* Asegúrate de que la URL de la imagen sea correcta */
-    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('imagenes/imagen_banner.jpg');
     background-size: cover;
     background-position: center;
     height: 80vh;
@@ -369,4 +369,102 @@ footer {
     width: auto;  /* Mantiene la proporción */
     margin-bottom: 1rem;
     display: block; /* Asegura que se comporte bien en el centro */
+}
+/* GRID */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* TARJETAS */
+.portfolio-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.portfolio-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.tools-used {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* TARJETAS PORTAFOLIO CON FONDO TURQUESA TRANSPARENTE */
+.portfolio-card {
+    background: rgba(0, 150, 170, 0.12);   /* Turquesa suave */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+    border: 1px solid rgba(0, 150, 170, 0.25); /* bordecito suave */
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 150, 170, 0.18); /* un poco más visible al pasar el mouse */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+/* BOTÓN VOLVER AL PORTAFOLIO */
+.btn-card {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #03223F;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background .3s ease;
+}
+
+.btn-card:hover {
+    background: #038BBB;
+}
+
+/* hidden Volver */
+.hidden {
+    display: none;
+}
+
+.back-btn {
+    background: #038BBB;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background .3s ease;
+}
+
+.back-btn:hover {
+    background: #038BBB;
+}
+
+/* Boton turqueza */
+.btn-turquesa {
+    background-color: #038BBB !important; /* Turquesa */
+    color: #ffffff;
+}
+
+.btn-turquesa:hover {
+    background-color: #008c96 !important; /* Turquesa más oscuro */
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(0, 140, 150, 0.4);
 }

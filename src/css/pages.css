@@ -1,0 +1,14 @@
+#about {
+    background-color: var(--bg-alt);
+    padding: 60px 10%;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+#tools { background: #fff; padding: 4rem 1rem; }
+#portfolio { padding: 60px 10%; }
+#contact { background: var(--primary-color); color: white; text-align: center; }

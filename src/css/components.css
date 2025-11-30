@@ -1,0 +1,148 @@
+/* BOTONES */
+.btn {
+    padding: 12px 30px;
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.btn:hover { background: var(--text-light); color: var(--primary-color); }
+
+.btn-card {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #03223F;
+    color: white;
+    border-radius: 8px;
+    transition: background .3s;
+}
+.btn-card:hover { background: #038BBB; }
+
+.back-btn {
+    background: #038BBB;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+/* BOTONES DASHBOARD */
+.dashboard-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    background-color: #e67e22;
+    color: white;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+.dashboard-btn:hover {
+    background-color: #d35400;
+    transform: translateY(-3px);
+}
+
+/* BOTÓN TURQUESA */
+.btn-turquesa {
+    background-color: #038BBB !important;
+}
+.btn-turquesa:hover {
+    background-color: #008c96 !important;
+}
+
+/* CARDS */
+.tool-card, .portfolio-card {
+    background: rgba(0, 150, 170, 0.12);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+/* UTILITARIOS */
+.hidden { display: none; }
+
+/* === ICONOS DE LAS HERRAMIENTAS === */
+
+.tool-card i {
+    font-size: 55px;      /* íconos de FontAwesome */
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.tool-img {
+    width: 60px;          /* logos PNG/SVG */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* CARD de herramienta */
+.tool-card {
+    padding: 30px 20px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: default;
+    transition: 0.3s ease-in-out;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.project-description ul,
+.lista-solucion ul {
+    list-style: disc;
+    padding-left: 25px; /* sangría del punto */
+}
+
+.project-description li,
+.lista-solucion li {
+    margin-bottom: 6px; /* espacio entre ítems */
+}
+
+.dashboard-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ICONOS DE CONTACTO */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 45px;   /* ❗ tamaño grande */
+    transition: 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #d6d6d6;
+    transform: translateY(-4px);
+}
+/* === Botón dentro de cada tarjeta del portafolio === */
+.portfolio-card {
+    text-align: center;   /* centra todo el contenido */
+}
+
+.btn-card {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #0b2a45;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-card:hover {
+    background: #0e3c60;
+    transform: translateY(-3px);
+}
